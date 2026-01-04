@@ -1,3 +1,120 @@
-# CODEOWNERS global da org
-# Ajuste os @times/@users para os reais.
+############################################
+# CODEOWNERS — Organização WEBLEAP (webleapdev)
+# Regra: a última correspondência válida prevalece
+############################################
+
+# ------------------------------------------
+# Owners gerais (fallback)
+# ------------------------------------------
 * @webleapdev/owners
+
+
+# ==========================================
+# GASTROHUB — BACKEND (NestJS / Prisma)
+# Repo: gastrohub-api
+# ==========================================
+
+# Código-fonte principal
+src/**                         @webleapdev/backend
+
+# Prisma (schema, migrations, seeds)
+prisma/**                      @webleapdev/backend
+
+# Configurações de aplicação
+.env*                          @webleapdev/backend
+nestjs-cli.json                @webleapdev/backend
+tsconfig*.json                 @webleapdev/backend
+
+# Testes
+test/**                        @webleapdev/backend
+
+# CI/CD
+.github/workflows/**           @webleapdev/backend @webleapdev/devops
+
+
+# ==========================================
+# GASTROHUB — FRONTEND WEB (React / Vite)
+# Repo: gastrohub-web
+# ==========================================
+
+src/**                         @webleapdev/frontend
+
+# Configurações
+vite.config.*                  @webleapdev/frontend
+tsconfig*.json                 @webleapdev/frontend
+index.html                     @webleapdev/frontend
+
+# Estilos
+public/**                      @webleapdev/frontend
+
+# Testes
+tests/**                       @webleapdev/frontend
+
+# CI/CD
+.github/workflows/**           @webleapdev/frontend @webleapdev/devops
+
+
+# ==========================================
+# GASTROHUB — INFRA / DEVOPS
+# Repo: gastrohub-infra
+# ==========================================
+
+# Docker / Compose
+docker/**                      @webleapdev/devops
+compose/**                     @webleapdev/devops
+Dockerfile*                    @webleapdev/devops
+docker-compose*.yml            @webleapdev/devops
+
+# Scripts
+scripts/**                     @webleapdev/devops
+
+# IaC (futuro)
+terraform/**                   @webleapdev/devops
+helm/**                        @webleapdev/devops
+
+# CI/CD
+.github/workflows/**           @webleapdev/devops
+
+
+# ==========================================
+# GASTROHUB — DOCUMENTAÇÃO
+# Repo: gastrohub-docs
+# ==========================================
+
+# Tudo é documentação
+**/*.md                        @webleapdev/product @webleapdev/owners
+docs/**                        @webleapdev/product
+
+# Arquitetura / Banco / ADRs
+architecture/**                @webleapdev/owners
+database/**                    @webleapdev/backend
+adr/**                         @webleapdev/owners
+
+
+# ==========================================
+# GASTROHUB — SHARED / CONTRATOS
+# Repo: gastrohub-shared
+# ==========================================
+
+# Código compartilhado (types, contracts, schemas)
+src/**                         @webleapdev/backend @webleapdev/frontend
+
+# Build / configs
+tsconfig*.json                 @webleapdev/backend
+package.json                   @webleapdev/backend
+
+# CI/CD
+.github/workflows/**           @webleapdev/backend @webleapdev/devops
+
+
+# ==========================================
+# REGRAS ESPECIAIS (SEGURANÇA / GOVERNANÇA)
+# ==========================================
+
+# Arquivos sensíveis
+.env.example                   @webleapdev/owners
+SECURITY.md                    @webleapdev/owners
+CODEOWNERS                     @webleapdev/owners
+
+# GitHub templates
+.github/**                     @webleapdev/owners
