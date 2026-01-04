@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Suporte / Dúvidas
+    url: https://github.com/webleapdev
+    about: Use issues apenas para bugs e features. Para dúvidas, use o canal de suporte definido.
